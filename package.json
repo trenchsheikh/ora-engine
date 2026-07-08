@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env server.js",
-    "dev": "node --env-file=.env --watch server.js"
+    "start": "node --env-file=.env dev-server.js",
+    "dev": "node --env-file=.env --watch dev-server.js"
   },
   "engines": {
     "node": ">=20"
