@@ -33,9 +33,10 @@ function readBody(req) {
 
 function serveStatic(req, res) {
   const rel = req.url === '/' ? '/index.html' : req.url.split('?')[0];
-  const filePath = path.join(__dirname, rel);
+  const filePath = path.join(__dirname, 'public', rel);
+  const publicRoot = path.join(__dirname, 'public');
 
-  if (!filePath.startsWith(__dirname)) {
+  if (!filePath.startsWith(publicRoot)) {
     res.writeHead(403);
     res.end('Forbidden');
     return;

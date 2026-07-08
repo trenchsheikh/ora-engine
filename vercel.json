@@ -1,7 +1,11 @@
 {
-  "functions": {
-    "api/judge.js": {
-      "maxDuration": 60
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api/judge.js", "use": "@vercel/node", "config": { "maxDuration": 60 } },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/judge", "dest": "/api/judge.js" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
 }
